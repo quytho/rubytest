@@ -1,13 +1,21 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Users</h1>
+<h1   >Users</h1>
 
 <div id="users">
+<%= link_to "new user",new_user_path %>
   <% @users.each do |user| %>
+  <div class="user">
+    <div class="item">
     <%= render user %>
+    </div>
     <p>
       <%= link_to "Show this user", user %>
     </p>
+     <p>
+      <%= link_to "Delete this user", user_path(user), data: { "turbo-method": :delete } %>
+    </p>
+  </div>
   <% end %>
 </div>
 
